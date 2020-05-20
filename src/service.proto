@@ -2,15 +2,19 @@ syntax = "proto3";
 
 package pb;
 
+// LoginRequest is the message for beginning the handshake process
 message LoginRequest {
     string uuid = 1;
     bytes passphrase = 2;
 }
 
+// LoginResponse is the message that secures the access of a device
 message LoginResponse {
     bytes token = 1;
 }
 
+// MainService should hold all the routes or endpoints of the API
 service MainService {
+    // Login should begin a handshake process between the client and the server
     rpc Login (LoginRequest) returns (LoginResponse);
 }

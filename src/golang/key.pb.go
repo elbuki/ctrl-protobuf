@@ -20,6 +20,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+// Key is the representation of a key in the keyboard to standarize the codes
 type Key int32
 
 const (

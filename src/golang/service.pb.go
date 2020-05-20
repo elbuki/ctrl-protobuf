@@ -24,6 +24,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+// LoginRequest is the message for beginning the handshake process
 type LoginRequest struct {
 	Uuid                 string   `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	Passphrase           []byte   `protobuf:"bytes,2,opt,name=passphrase,proto3" json:"passphrase,omitempty"`
@@ -71,6 +72,7 @@ func (m *LoginRequest) GetPassphrase() []byte {
 	return nil
 }
 
+// LoginResponse is the message that secures the access of a device
 type LoginResponse struct {
 	Token                []byte   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -144,6 +146,7 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type MainServiceClient interface {
+	// Login should begin a handshake process between the client and the server
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 }
 
@@ -166,6 +169,7 @@ func (c *mainServiceClient) Login(ctx context.Context, in *LoginRequest, opts ..
 
 // MainServiceServer is the server API for MainService service.
 type MainServiceServer interface {
+	// Login should begin a handshake process between the client and the server
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 }
 
