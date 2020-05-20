@@ -8,27 +8,15 @@ These instructions should get you setup using the protos.
 
 ### Prerequisites
 
-You'll first need to set up the binaries and the tools to compile the protos, this repository should hold the compiled protos as well, but if you want to update them, you'll need the tools.
+You'll first need to set up the binaries and the tools to compile the protos, this repository should hold the compiled protos as well, but if you want to update them, you'll need the tools:
 
 ### Installing
 
-TBD
-
-## Running the tests
-
-TBD
-
-### And coding style tests
-
-TBD
-
-## Deployment
-
-TBD
+* [Install and set the compiler for gRPC](https://grpc.io/docs/quickstart/go/).
 
 ## Built With
 
-TBD
+[Go](https://golang.org/), [protocol buffers](https://developers.google.com/protocol-buffers) and the [gRPC compiler](https://grpc.io/).
 
 ## Authors
 
@@ -36,4 +24,4 @@ TBD
 
 ## License
 
-Closed source.
+MIT
