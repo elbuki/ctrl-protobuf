@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+import "key.proto";
+
 package pb;
 
 // LoginRequest is the message for beginning the handshake process
@@ -13,8 +16,16 @@ message LoginResponse {
     bytes token = 1;
 }
 
+// KeyPressRequest is the message that is used to perform a key press
+message KeyPressRequest {
+    bytes token = 1;
+    Key key = 2;
+}
+
 // MainService should hold all the routes or endpoints of the API
 service MainService {
     // Login should begin a handshake process between the client and the server
     rpc Login (LoginRequest) returns (LoginResponse);
+    // KeyPress should perform a key press in the server
+    rpc KeyPress (KeyPressRequest) returns (google.protobuf.Empty);
 }
