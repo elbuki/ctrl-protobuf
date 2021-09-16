@@ -5,6 +5,8 @@ import "key.proto";
 
 package pb;
 
+option go_package = "./";
+
 // LoginRequest is the message for beginning the handshake process
 message LoginRequest {
     string uuid = 1;
@@ -13,7 +15,7 @@ message LoginRequest {
 
 // LoginResponse is the message that secures the access of a device
 message LoginResponse {
-    bytes token = 1;
+    string token = 1;
 }
 
 // KeyPressRequest is the message that is used to perform a key press
