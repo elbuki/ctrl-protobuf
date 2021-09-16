@@ -5,7 +5,7 @@ import "key.proto";
 
 package pb;
 
-option go_package = "./";
+option go_package = "github.com/elbuki/ctrl-protobuf;ctrl_protobuf";
 
 // LoginRequest is the message for beginning the handshake process
 message LoginRequest {

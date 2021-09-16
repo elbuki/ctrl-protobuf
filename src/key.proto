@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pb;
 
-option go_package = "./";
+option go_package = "github.com/elbuki/ctrl-protobuf;ctrl_protobuf";
 
 // Key is the representation of a key in the keyboard to standarize the codes
 enum Key {
