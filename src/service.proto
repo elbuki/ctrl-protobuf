@@ -1,9 +1,11 @@
 syntax = "proto3";
 
 import "google/protobuf/empty.proto";
-import "key.proto";
+import "src/key.proto";
 
 package pb;
+
+option go_package = ".;proto";
 
 // LoginRequest is the message for beginning the handshake process
 message LoginRequest {
@@ -13,7 +15,7 @@ message LoginRequest {
 
 // LoginResponse is the message that secures the access of a device
 message LoginResponse {
-    bytes token = 1;
+    string token = 1;
 }
 
 // KeyPressRequest is the message that is used to perform a key press

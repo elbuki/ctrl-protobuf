@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package pb;
 
+option go_package = ".;proto";
+
 // Key is the representation of a key in the keyboard to standarize the codes
 enum Key {
     ENTER = 0;
