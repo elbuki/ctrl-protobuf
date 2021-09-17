@@ -1,11 +1,11 @@
 syntax = "proto3";
 
 import "google/protobuf/empty.proto";
-import "key.proto";
+import "src/key.proto";
 
 package pb;
 
-option go_package = "github.com/elbuki/ctrl-protobuf;ctrl_protobuf";
+option go_package = ".;proto";
 
 // LoginRequest is the message for beginning the handshake process
 message LoginRequest {

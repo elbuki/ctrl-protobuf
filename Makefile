@@ -1,4 +1,4 @@
 # This should compile the protocol buffers for the supported languages.
-proto:
-	rm -f src/golang/*.pb.go
-	protoc -I src/ src/*.proto --go_out=src/golang --go-grpc_out=src/golang
+gen-proto:
+	rm -f proto/*.pb.go
+	protoc --go_out=proto/ --go-grpc_out=proto/ src/*.proto
